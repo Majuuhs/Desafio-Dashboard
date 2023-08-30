@@ -1,44 +1,300 @@
-*, *::after, *::before { /*pega tudo na página, até partes especiais, e aplica estilo a eles*/
-    box-sizing: border-box;
+*{
     margin: 0;
     padding: 0;
-}
-
-body{
-    font-family: 'Rubik', sans-serif;
-    background-color: hsl(226, 43%, 10%);;
-    color: #fff;
-    display: grid;
-    place-items: center;
-    min-height: 100vh;
-    padding: 1rem;
-}
-
-.container {
-    display: flex;
-    flex-wrap: wrap; /*Organiza itens flexíveis em várias linhas quando não há espaço suficiente, útil para layouts adaptáveis.*/
-    gap: clamp(1rem, 3vw, 2rem) /*Estabelece um espaçamento uniforme entre itens flexíveis, melhorando o alinhamento visual.*/
-}
-
-.card {
-    background-color: hsl(235, 46%, 20%);
-    border-radius: 1rem;
-}
-
-.card--avatar{
-    display: flex;
-    flex-direction: column; /* define a direção dos itens no contêiner flexível*/
-    justify-content: space-between;
-}
-
-.card--avatar-top {
-    background:  hsl(246, 80%, 60%);
-}
-
-.card--avatar-bottom{
+    box-sizing: border-box;
+  }
+  
+  html {
+    font-family: "Rubik", sans-serif;
+    height: 100%;
+  }
+  
+  body {
+    background-color: #0f1424;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
+    height: 100vh; 
+    margin: 0; 
+    font-size: 18px;
+    color: white;
+    
+  }
+  
+  .container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    grid-template-rows: repeat(2, 245px);
+    gap: 30px; 
+    justify-content: center;
+    width: 100%; 
+    max-width: 1440px; 
+    margin: 0 auto;
+  }
+  
+  .card--avatar {
+    grid-row-start: 1;
+    grid-row-end: 3;
+    background-color: #1c1f4a;
+    border-radius: 15px;
+    overflow: hidden;
+  }
+  
+  .card--avatar-top {
+    background-color: #5847eb;
+    border-radius: 15px;
+    padding: 35px 30px;
+  }
+  
+  .card .card--avatar-top .img {
+    height: 85px;
+    border: solid 3px white;
+    border-radius: 50%;
+    margin-bottom: 32px;
+  }
+  
+  .card .card--avatar-top .card--avatar-top-dados {
+    margin-bottom: 40px;
+  }
+  
+  .card .card--avatar-top .card--avatar-top-dados .text {
+    font-weight: 300;
+    font-size: 0.9em;
+    display: block;
+    color: #bdc1ff;
+    margin-bottom: 5px;
+  }
+  
+  .card .card--avatar-top .card--avatar-top-dados .name {
+    font-size: 2.2em;
+    font-weight: 300;
+  }
+  
+  .card .info--time {
+    padding: 25px 30px;
+    list-style: none;
+    font-weight: 300;
+  }
+  
+  .card--avatar .info--time li {
+    margin-bottom: 20px;
+    font-size: 1em;
+    -webkit-transition: ease 0.5s;
+    transition: ease 0.5s;
+    color: #6f76c8;
+    font-weight: 400;
+  }
+  
+  .card .info--time li:hover {
+    cursor: pointer;
+    color: white;
+    -webkit-transition: ease 0.5s;
+    transition: ease 0.5s;
+  }
+  
+  .card .info--time li:last-child {
+    margin: 0;
+  }
+  
+  .card .info--time .active {
+    color: white;
+    transition: ease 0.5s; 
+  
+  }
+  .card {
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: right 20px top -10px;
+  }
+  
+  .card .card--options {
+    position: absolute;
+    right: 30px;
+    top: 70px;
+  }
+  
+  .card .card--options:hover {
+    cursor: pointer;
+    -webkit-filter: contrast(4);
+    filter: contrast(4);
+  }
+  
+  .card .card--inner {
+    margin-top: 45px;
+    padding: 30px;
+    background: #1c1f4a;
+    height: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+  }
+  
+  .card .card--inner .card--top {
+    display: -webkit-box;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .card .card--inner .card--top .card--title {
+    font-weight: 500;
+    margin-bottom: 25px;
+    transition: ease 0.5ms;
+  }
+  
+  .card .card--inner .card--content {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  
+  .card .card--inner .card--current-time {
+    font-size: 3em;
+    display: block;
+    font-weight: 300;
+    margin-bottom: 10px;
+    -webkit-transition: opacity 0.5s;
+    transition: opacity 0.5s;
+  }
+  
+  .card .card--inner .card--previous-time {
+    font-size: 0.85em;
+    font-weight: 300;
+    color: #bdc1ff;
+    -webkit-transition: opacity 0.5s;
+    transition: opacity 0.5s;
+  }
+  
+  .card .card--inner:hover {
+    background-color: #34397b;
+    -webkit-transition: ease 0.5ms;
+    transition: ease 0.5ms;
+    cursor: pointer;
+  }
+  
+  .animation {
+    opacity: 0;
+  }
+  
+  .card--work {
+    background-color: #ff8c66;
+    background-image: url(./images/icon-work.svg);
+  }
+  
+  .card--exercise {
+    background-color: #4acf81;
+    background-image: url(./images/icon-exercise.svg);
+  }
+  
+  .card--play {
+    background-color: #56c2e6;
+    background-image: url(./images/icon-play.svg);
+  }
+  
+  .card--selfcare {
+    background-color: #f1c65b;
+    background-image: url(./images/icon-self-care.svg);
+  }
+  
+  .card--social {
+    background-color: #7536d3;
+    background-image: url(./images/icon-social.svg);
+  }
+  
+  .card--study {
+    background-color: #ff5c7c;
+    background-image: url(./images/icon-study.svg);
+  }
+  
+  .attribution {
+    position: absolute;
+    bottom: 15px;
+  }
+  
+  @media screen and (max-width: 600px) {
+  body {
+    height: auto;
+    position: relative;
+  }
 
+  .container {
+    margin: 80px 0;
+    display: grid;
+    grid-template-columns: 330px;
+    grid-template-rows: auto;
+    column-gap: 25px;
+    row-gap: 25px;
+  }
+
+  .card--avatar {
+    grid-row-end: 1;
+  }
+
+  .card--avatar .card--avatar-top {
+    display: flex;
+    align-items: center;
+    padding: 32px 30px;
+  }
+
+  .card--avatar .card--avatar-top .img {
+    margin-bottom: 0;
+    height: 70px;
+  }
+
+  .card--avatar .card--avatar-top .card--avatar-top-dados {
+    padding-left: 20px;
+    margin-bottom: 0;
+  }
+
+  .card--avatar .card--avatar-top .card--avatar-top-dados .text {
+    font-size: 0.85em;
+    margin-bottom: 5px;
+  }
+
+  .card--avatar .card--avatar-top .card--avatar-top-dados .name {
+    font-size: 1.3em;
+  }
+
+  .card--avatar .card--avatar-top .card--avatar-top-dados .name br {
+    display: none;
+  }
+
+  .card--avatar .card--avatar-top   {
+    padding: 25px 30px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .card--avatar .info--time .info--time-option {
+    margin-bottom: 0;
+    font-size: 0.95em;
+  }
+
+  .card .card--inner {
+    padding: 25px;
+  }
+
+  .card .card--inner .card--top .card--title {
+    margin-bottom: 5px;
+  }
+
+  .card .card--inner .card--content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .card .card--inner .card--current-time {
+    font-size: 1.9em;
+    margin-bottom: 0;
+  }
+
+  .card .card--inner .card--previous-time {
+    font-size: 0.9em;
+  }
+
+  .card .card--options {
+    right: 25px;
+  }
 }
+

@@ -9,79 +9,136 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
   <title>Dashboard</title>
   
 </head>
+
 <body>
-  <div class="container">
-    <div class="card card--avatar">
-      <div class=" card card--avatar-top">
-        <img src="./images/image-jeremy.png" alt="Foto do Jeremy">
-        <h1><span>Report for</span><br>
-        Jeremy
-        </h1>
+  <main>
+    <section class="container">
+      <div class="card card--avatar">
+        <div class="card--avatar-top">
+          <img src="./images/image-jeremy.png" alt="Jeremy">
+          <div class="card--avatar-top-dados">
+            <h1><span class="text">Report For</span><br>
+            <spam class="name">Jeremy <br> Robson</spam>
+          </h1>
+          </div>
+          
+        </div>
+        <ul class="info--time">
+            <li class="info--time-option" onclick="changeCards('daily')">
+              Daily
+            </li>
+            <li class="info--time-option" onclick="changeCards('weekly')">
+              Weekly
+            </li>
+            <li class="info--time-option" onclick="changeCards('monthly')">
+              Monthly
+            </li>
+          </ul>
       </div>
-      <div class="card--avatar-bottom">
-        <button>Daily</button>
-        <button>Weekly</button>
-        <button>Monthly</button>
+      <div class="card card--work">
+        <span class="card--options">
+          <img src="./images/icon-ellipsis.svg" alt="3 pontos menu">
+        </span>
+        <div class="card--inner">
+          <div class="card--top">
+            <span class="card--title">Work</span>
+          </div>
+          <div class="card--content">
+            <span class="card--current-time">32hrs</span>
+            <span class="card--previus-time">Last Week - 36hrs</span>
+          </div>
+        </div>
+      </div>
+      <div class="card card--play">
+        <span class="card--options">
+          <img src="/images/icon-ellipsis.svg" alt="3 Dots menu" />
+        </span>
+        <div class="card--inner">
+          <div class="card--top">
+            <span class="card--title">Play</span>
+          </div>
+          <div class="card--content">
+            <span class="card--current-time"> 10hrs </span>
+            <span class="card--previous-time">Last Week - 8hrs</span>
+          </div>
+        </div>
+      </div>
+      <div class="card card--study">
+        <span class="card--options">
+          <img src="/images/icon-ellipsis.svg" alt="3 Dots menu" />
+        </span>
+        <div class="card--inner">
+          <div class="card--top">
+            <span class="card--title">Study</span>
+          </div>
+          <div class="card--content">
+            <span class="card--current-time"> 4hrs </span>
+            <span class="card--previous-time">Last Week - 7hrs</span>
+          </div>
+        </div>
+      </div>
+      <div class="card card--exercise">
+        <span class="card--options">
+          <img src="/images/icon-ellipsis.svg" alt="3 Dots menu" />
+        </span>
+        <div class="card--inner">
+          <div class="card--top">
+            <span class="card--title">Exercise</span>
+          </div>
+          <div class="card--content">
+            <span class="card--current-time"> 4hrs </span>
+            <span class="card--previous-time">Last Week - 5hrs</span>
+          </div>
+        </div>
+      </div>
+      <div class="card card--social">
+        <span class="card--options">
+          <img src="./images/icon-ellipsis.svg" alt="3 Dots menu" />
+        </span>
+        <div class="card--inner">
+          <div class="card--top">
+            <span class="card--title">Social</span>
+          </div>
+          <div class="card--content">
+            <span class="card--current-time"> 5hrs </span>
+            <span class="card--previous-time">Last Week - 10hrs</span>
+          </div>
+        </div>
+      </div>
+      <div class="card card--selfcare">
+        <span class="card--options">
+          <img src="/images/icon-ellipsis.svg" alt="3 Dots menu" />
+        </span>
+        <div class="card--inner">
+          <div class="card--top">
+            <span class="card__title">Self Care</span>
+          </div>
+          <div class="card--content">
+            <span class="card--current-time"> 2hrs </span>
+            <span class="card--previous-time">Last Week - 2hrs</span>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="card container--timecards">
-      <div class="timecard--">
-        Work
-        5hrs <!-- daily -->
-        Previous - 7hrs <!-- daily -->
-        32hrs <!-- weekly -->
-        Previous - 36hrs <!-- weekly -->
-        103hrs <!-- monthly -->
-        Previous - 128hrs <!-- monthly -->
-
-        Play
-        1hr <!-- daily -->
-        Previous - 2hrs <!-- daily -->
-        10hrs <!-- weekly -->
-        Previous - 8hrs <!-- weekly -->
-        23hrs <!-- monthly -->
-        Previous - 29hrs <!-- monthly -->
-
-        Study
-        0hrs <!-- daily -->
-        Previous - 1hr <!-- daily -->
-        4hrs <!-- weekly -->
-        Previous - 7hrs <!-- weekly -->
-        13hrs <!-- monthly -->
-        Previous - 19hrs <!-- monthly -->
-
-        Exercise
-        1hr <!-- daily -->
-        Previous - 1hr <!-- daily -->
-        4hrs <!-- weekly -->
-        Previous - 5hrs <!-- weekly -->
-        11hrs <!-- monthly -->
-        Previous - 18hrs <!-- monthly -->
-
-        Social
-        1hr <!-- daily -->
-        Previous - 3hrs <!-- daily -->
-        5hrs <!-- weekly -->
-        Previous - 10hrs <!-- weekly -->
-        21hrs <!-- monthly -->
-        Previous - 23hrs <!-- monthly -->
-
-        Self Care
-        0hrs <!-- daily -->
-        Previous - 1hr <!-- daily -->
-        2hrs <!-- weekly -->
-        Previous - 2hrs <!-- weekly -->
-        7hrs <!-- monthly -->
-        Previous - 11hrs <!-- monthly -->
-
-      </div>
-  </div>
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="https://github.com/Majuuhs">Maria Júlia</a>.
-  </div>
-</body>
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by
+      <a target="_blank" href="#"
+        >Maria Júlia</a
+      >.
+    </div>
+  </body>
+  <footer>
+    <script src="./data.json"></script>
+    <script src="./js.js"></script>
+  </footer>
 </html>
+    </section>
+  </main>
+</body>
