@@ -1,44 +1,308 @@
-*, *::after, *::before { /*pega tudo na página, até partes especiais, e aplica estilo a eles*/
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-    font-family: 'Rubik', sans-serif;
-    background-color: hsl(226, 43%, 10%);;
-    color: #fff;
-    display: grid;
-    place-items: center;
-    min-height: 100vh;
-    padding: 1rem;
+
+body {
+  font-family: "Rubik", sans-serif;
+  height: 100%;
+  background-color: #0f1424;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; 
+  margin: 0; 
+  font-size: 18px;
+  color: white;
+  
 }
 
 .container {
-    display: flex;
-    flex-wrap: wrap; /*Organiza itens flexíveis em várias linhas quando não há espaço suficiente, útil para layouts adaptáveis.*/
-    gap: clamp(1rem, 3vw, 2rem) /*Estabelece um espaçamento uniforme entre itens flexíveis, melhorando o alinhamento visual.*/
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); 
+  grid-template-rows: repeat(2, 245px);
+  gap: 30px; 
+  justify-content: center;
+  width: 100%; 
+  max-width: 1440px; 
+  margin: 0 auto;
 }
 
 .card {
-    background-color: hsl(235, 46%, 20%);
-    border-radius: 1rem;
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: right 20px top -10px;
 }
 
-.card--avatar{
-    display: flex;
-    flex-direction: column; /* define a direção dos itens no contêiner flexível*/
-    justify-content: space-between;
+.card__avatar {
+  grid-row-start: 1;
+  grid-row-end: 3;
+  background-color: #1c1f4a;
+  border-radius: 15px;
+  overflow: hidden;
 }
 
-.card--avatar-top {
-    background:  hsl(246, 80%, 60%);
+.card__avatar-top {
+  background-color: #5847eb;
+  border-radius: 15px;
+  padding: 20px 30px;
 }
 
-.card--avatar-bottom{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
+.img {
+  height: 85px;
+  border: solid 3px white;
+  border-radius: 50%;
+  margin: px;
+}
+
+.card__avatar-top-dados {
+  height: 100%;
+}
+
+.text {
+  font-weight: 300;
+  font-size: 0.9em;
+  display: block;
+  color: #bdc1ff;
+  margin-bottom: 5px;
+}
+
+.name {
+  font-size: 2.2em;
+  font-weight: 300;
+}
+
+.info__time {
+  list-style: none;
+  padding: 15px 30px;
+  font-weight: 300;
+}
+
+.info__time li {
+  margin-bottom: 20px;
+  font-size: 1em;
+  transition: ease 0.5s;
+  color: #6f76c8;
+  font-weight: 400;
+}
+
+.info__time li:hover {
+  cursor: pointer;
+  color: white;
+  transition: ease 0.5s;
+}
+
+.info__time li:last-child {
+  margin: 0;
+}
+
+.info__time .active {
+  color: white;
+  transition: ease 0.5s; 
 
 }
+
+.card__options {
+  position: absolute;
+  right: 30px;
+  top: 70px;
+}
+
+.card__options:hover {
+  cursor: pointer;
+  filter: contrast(4);
+}
+
+.card__inner {
+  margin-top: 45px;
+  padding: 30px;
+  background: #1c1f4a;
+  height: 100%;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.card__top {
+  display: -webkit-box;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card__title {
+  font-weight: 500;
+  margin-bottom: 25px;
+  transition: ease 0.5ms;
+}
+
+.card__content {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.card__current-time {
+  font-size: 3em;
+  display: block;
+  font-weight: 300;
+  margin-bottom: 10px;
+  transition: opacity 0.5s;
+  flex-direction:;
+}
+
+.card__previous-time {
+  font-size: 0.85em;
+  font-weight: 300;
+  color: #bdc1ff;
+  transition: opacity 0.5s;
+  
+}
+
+.card__inner:hover {
+  background-color: #34397b;
+  transition: ease 0.5ms;
+  cursor: pointer;
+}
+
+.animation {
+  opacity: 0;
+}
+
+.card__work {
+  background-color: #ff8c66;
+  background-image: url(./images/icon-work.svg);
+}
+
+.card__exercise {
+  background-color: #4acf81;
+  background-image: url(./images/icon-exercise.svg);
+}
+
+.card__play {
+  background-color: #56c2e6;
+  background-image: url(./images/icon-play.svg);
+}
+
+.card__selfcare {
+  background-color: #f1c65b;
+  background-image: url(./images/icon-self-care.svg);
+}
+
+.card__social {
+  background-color: #7536d3;
+  background-image: url(./images/icon-social.svg);
+}
+
+.card__study {
+  display: flex;
+  flex-direction: column;
+  background-color: #ff5c7c;
+  background-image: url(./images/icon-study.svg);
+}
+
+.attribution {
+  position: absolute;
+  bottom: 15px;
+}
+
+@media screen and (max-width: 600px) {
+body {
+  height: auto;
+  position: relative;
+}
+
+.container {
+  margin: 80px 0;
+  display: grid;
+  grid-template-columns: 330px;
+  grid-template-rows: auto;
+  column-gap: 25px;
+  row-gap: 25px;
+}
+
+.card__avatar {
+  grid-row-end: 1;
+}
+
+.card__avatar-top {
+  display: flex;
+  align-items: center;
+  padding: 32px 30px;
+}
+
+.image-jeremy {
+  margin-bottom: 0;
+  height: 100px;
+  border: 5px solid white;
+  border-radius: 50%;
+}
+
+.card__avatar-top-dados {
+  padding-left: 20px;
+  margin-bottom: 0;
+}
+
+.text {
+  font-size: 0.85em;
+  margin-bottom: 5px;
+}
+
+.name {
+  font-size: 1.3em;
+}
+
+.name br {
+  display: none;
+}
+
+.card__avatar-top   {
+  padding: 30px 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.info__time{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.info__time-option {
+  margin-bottom: 0;
+  margin-right: 45px;
+
+  font-size: 0.95em;
+}
+
+.card__inner {
+  padding: 25px;
+}
+
+.card__title {
+  margin-bottom: 5px;
+}
+
+.card__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+
+.card__current-time {
+  font-size: 1.9em;
+  margin-bottom: 0;
+}
+
+.card__previous-time {
+  font-size: 0.9em;
+}
+
+.card__options {
+  right: 25px;
+}
+
+
