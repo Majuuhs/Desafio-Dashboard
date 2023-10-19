@@ -150,7 +150,7 @@ body {
   font-weight: 300;
   margin-bottom: 10px;
   transition: opacity 0.5s;
-  flex-direction:;
+  flex-direction:30px;
 }
 
 .card__previous-time {
@@ -208,7 +208,7 @@ body {
   bottom: 15px;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 760px) {
 body {
   height: auto;
   position: relative;
@@ -306,3 +306,4 @@ body {
 }
 
 
+}
